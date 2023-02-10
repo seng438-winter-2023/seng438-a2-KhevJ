@@ -48,10 +48,20 @@ public class RangeTest {
     
     public static class containsTesting {
     	 	@Test
-    	    public void containsZero() {
+    	    public void containsInRange() {
     	    	assertTrue("Zero should be in range -1 and 1",exampleRange.contains(0.0));
     	    }
     	    
+    	 	
+    	 	@Test
+    	 	public void containsLowerBound() {
+    	    	assertTrue("-1 should be in range -1 and 1",exampleRange.contains(-1.0));
+    	    }
+    	 	
+    	 	
+    	 	public void containsUpperBound() {
+    	    	assertTrue("1 should be in range -1 and 1",exampleRange.contains(1.0));
+    	    }
     	    
     	    @Test
     	    public void containsLessThanLowerBound() {
