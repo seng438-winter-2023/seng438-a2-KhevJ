@@ -72,6 +72,8 @@ public class RangeTest {
     	    public void containsMoreThanUpperBound() {
     	    	assertFalse("3 should be in range -1 and 1",exampleRange.contains(3.0));
     	    }
+    	    
+    	    
     }
 
     
@@ -132,6 +134,13 @@ public class RangeTest {
     	 public void intersectWithBothValuesLessThanLowerBoundary() {
  	    	assertFalse("-5 and -3 should not intersect -1 and 1",
  	    	        exampleRange.intersects(-5, -3));
+ 	    	
+ 	    }
+    	 
+    	 @Test
+    	 public void intersectWithBothValuesLessThanLowerBoundaryAndGreaterThanUpperBoundary() {
+ 	    	assertFalse("-2 and 2 should not intersect -1 and 1",
+ 	    	        exampleRange.intersects(-2, -2));
  	    	
  	    }
     	 
