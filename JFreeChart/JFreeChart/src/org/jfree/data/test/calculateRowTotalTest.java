@@ -50,7 +50,7 @@ public class calculateRowTotalTest {
 	@Test
 	public void calculateRowTotalForTwoValues() {
 		mockingContext.checking(new Expectations() {
-	        {
+	        {    //setting up return of those functions to the value
 	            one(values).getColumnCount();
 	            will(returnValue(2));
 	            one(values).getValue(0, 0);
@@ -71,7 +71,7 @@ public class calculateRowTotalTest {
 	@Test
 	public void calculateRowTotalForNegativeTwoValues() {
 		mockingContext.checking(new Expectations() {
-	        {
+	        {    //setting up return of those functions to the value
 	            one(values).getColumnCount();
 	            will(returnValue(2));
 	            one(values).getValue(0, 0);
@@ -91,7 +91,7 @@ public class calculateRowTotalTest {
 	@Test
 	public void calculateRowTotalFiveValues() {
 		mockingContext.checking(new Expectations() {
-	        {
+	        {    //setting up return of those functions to the value
 	            one(values).getColumnCount();
 	            will(returnValue(5));
 	            one(values).getValue(0, 0);
@@ -118,7 +118,7 @@ public class calculateRowTotalTest {
 	@Test
 	public void calculateRowTotalOneValue() {
 		mockingContext.checking(new Expectations() {
-	        {
+	        {   //setting up return of those functions to the value
 	            one(values).getColumnCount();
 	            will(returnValue(1));
 	            one(values).getValue(0, 0);
@@ -139,7 +139,7 @@ public class calculateRowTotalTest {
 	@Test
 	public void calculateRowTotalForNoColumns() {
 		mockingContext.checking(new Expectations() {
-	        {
+	        {    //setting up return of those functions to the value
 	            one(values).getColumnCount();
 	            will(returnValue(0));
 	            
@@ -159,7 +159,7 @@ public class calculateRowTotalTest {
 	@Test
 	public void testingForTotalToBeZeroForInvalidInput() {
 		mockingContext.checking(new Expectations() {
-	        {
+	        {    //setting up return of those functions to the value
 	            one(values).getColumnCount();
 	            will(returnValue(2));
 	            one(values).getValue(0, 0);
@@ -180,7 +180,7 @@ public class calculateRowTotalTest {
 	@Test
 	public void calculateRowTotalForTwoRows() {
 		mockingContext.checking(new Expectations() {
-	        {
+	        {    //setting up return of those functions to the value
 	            one(values).getColumnCount();
 	            will(returnValue(1));
 	            one(values).getValue(0, 0);
@@ -203,7 +203,7 @@ public class calculateRowTotalTest {
 	@Test(expected = InvalidParameterException.class)
 	public void testingForInvalidParameterExceptionForInvalidValue() {
 		mockingContext.checking(new Expectations() {
-	        {
+	        {    //setting up return of those functions to the value
 	            one(values).getColumnCount();
 	            will(returnValue(2));
 	            one(values).getValue(0, 0);
@@ -227,7 +227,7 @@ public class calculateRowTotalTest {
 	@Test(expected = InvalidParameterException.class)
 	public void testingForInvalidParameterExceptionForInvalidRowIndexForLessThanZero() {
 		mockingContext.checking(new Expectations() {
-	        {
+	        {  //setting up return of those functions to the value
 	            one(values).getColumnCount();
 	            will(returnValue(1));
 	            one(values).getValue(-1, 0);
@@ -245,7 +245,7 @@ public class calculateRowTotalTest {
 	@Test(expected = InvalidParameterException.class)
 	public void testingForInvalidParameterExceptionForInvalidRowIndexHigherThanRowSize() {
 		mockingContext.checking(new Expectations() {
-	        {
+	        {    //setting up return of those functions to the value
 	            one(values).getColumnCount();
 	            will(returnValue(1));
 	            one(values).getValue(2, 0);

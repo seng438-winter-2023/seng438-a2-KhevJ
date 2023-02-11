@@ -14,7 +14,7 @@ import org.junit.runners.Suite;
 
 
 @RunWith(Suite.class)
-
+//allows us to run all data utilities simultaneously
 @Suite.SuiteClasses({
    calculateColumnTotalTest.class,
    calculateRowTotalTest.class,

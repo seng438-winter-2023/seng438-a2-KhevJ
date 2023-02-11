@@ -51,9 +51,9 @@ public class calculateColumnTotalTest {
 	@Test
 	public void calculateColumnTotalForTwoValues() {
 		mockingContext.checking(new Expectations() {
-	        {
+	        {   //setting up return of those functions to the value
 	            one(values).getRowCount();
-	            will(returnValue(2));
+	            will(returnValue(2)); 
 	            one(values).getValue(0, 0);
 	            will(returnValue(7.5));
 	            one(values).getValue(1, 0);
@@ -62,7 +62,7 @@ public class calculateColumnTotalTest {
 	        }
 	    });
 	    double result = DataUtilities.calculateColumnTotal(values, 0);
-	    assertEquals("Should return ten",10, result, .000000001d);
+	    assertEquals("Should return ten",10, result, .000000001d); 
 		
 	}
 	
@@ -73,7 +73,7 @@ public class calculateColumnTotalTest {
 	@Test
 	public void calculateColumnTotalForNegativeTwoValues() {
 		mockingContext.checking(new Expectations() {
-	        {
+	        {  //setting up return of those functions to the value
 	            one(values).getRowCount();
 	            will(returnValue(2));
 	            one(values).getValue(0, 0);
@@ -97,7 +97,7 @@ public class calculateColumnTotalTest {
 	@Test
 	public void calculateColumnTotalFiveValues() {
 		mockingContext.checking(new Expectations() {
-	        {
+	        {	 //setting up return of those functions to the value
 	            one(values).getRowCount();
 	            will(returnValue(5));
 	            one(values).getValue(0, 0);
@@ -124,7 +124,7 @@ public class calculateColumnTotalTest {
 	@Test
 	public void calculateColumnTotalOneValue() {
 		mockingContext.checking(new Expectations() {
-	        {
+	        {	 //setting up return of those functions to the value
 	            one(values).getRowCount();
 	            will(returnValue(1));
 	            one(values).getValue(0, 0);
@@ -144,7 +144,7 @@ public class calculateColumnTotalTest {
 	@Test
 	public void calculateColumnTotalForTwoColumns() {
 		mockingContext.checking(new Expectations() {
-	        {
+	        {	 //setting up return of those functions to the value
 	            one(values).getRowCount();
 	            will(returnValue(1));
 	            one(values).getValue(0, 0);
@@ -166,7 +166,7 @@ public class calculateColumnTotalTest {
 	@Test
 	public void calculateColumnTotalForNoRows() {
 		mockingContext.checking(new Expectations() {
-	        {
+	        {	 //setting up return of those functions to the value
 	            one(values).getRowCount();
 	            will(returnValue(0));
 	            
@@ -183,7 +183,7 @@ public class calculateColumnTotalTest {
 		@Test(expected = InvalidParameterException.class)
 		public void testingForInvalidParameterExceptionForInvalidRowIndexForLessThanZero() {
 			mockingContext.checking(new Expectations() {
-	            {
+	            {	 //setting up return of those functions to the value
 	                one(values).getRowCount();
 	                will(returnValue(1));
 	                one(values).getValue(0, -1);
@@ -203,7 +203,7 @@ public class calculateColumnTotalTest {
 		@Test(expected = InvalidParameterException.class)
 		public void testingForInvalidParameterExceptionForInvalidRowIndexHigherThanRowSize() {
 			mockingContext.checking(new Expectations() {
-		        {
+		        {    //setting up return of those functions to the value
 		            one(values).getRowCount();
 		            will(returnValue(1));
 		            one(values).getValue(0, 2);
@@ -223,7 +223,7 @@ public class calculateColumnTotalTest {
 	@Test
 	public void testingForTotalToBeZeroForInvalidInput() {
 		mockingContext.checking(new Expectations() {
-	        {
+	        {    //setting up return of those functions to the value
 	            one(values).getRowCount();
 	            will(returnValue(2));
 	            one(values).getValue(0, 0);
@@ -245,7 +245,7 @@ public class calculateColumnTotalTest {
 	@Test(expected = InvalidParameterException.class)
 	public void testingForInvalidParameterExceptionForInvalidValue() {
 		mockingContext.checking(new Expectations() {
-	        {
+	        {    //setting up return of those functions to the value
 	            one(values).getRowCount();
 	            will(returnValue(2));
 	            one(values).getValue(0, 0);
