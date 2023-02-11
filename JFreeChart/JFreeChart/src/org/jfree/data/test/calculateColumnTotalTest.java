@@ -95,7 +95,7 @@ public class calculateColumnTotalTest {
 //				   |7.5 |
 //				   |1.0 |
 	@Test
-	public void calculateRowTotalFiveValues() {
+	public void calculateColumnTotalFiveValues() {
 		mockingContext.checking(new Expectations() {
 	        {
 	            one(values).getRowCount();

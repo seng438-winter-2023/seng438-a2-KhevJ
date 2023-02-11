@@ -52,29 +52,34 @@ public class RangeTest {
     public static class containsTesting {
     	
     		// This one tests if zero is contained in -1 and 1
+    		//should assert true
     	 	@Test
     	    public void containsInRange() {
     	    	assertTrue("Zero should be in range -1 and 1",exampleRange.contains(0.0));
     	    }
     	    
     	 // This one tests if the lower bound is contained in -1 and 1
+    	 	//should assert true
     	 	@Test
     	 	public void containsLowerBound() {
     	    	assertTrue("-1 should be in range -1 and 1",exampleRange.contains(-1.0));
     	    }
     	 	
     	 // This one tests if the upper bound is contained in -1 and 1
+    	 	//should assert true
     	 	public void containsUpperBound() {
     	    	assertTrue("1 should be in range -1 and 1",exampleRange.contains(1.0));
     	    }
     	    
     	   // This one test if the values lower than the lower bound is  not contained in -1 and 1
+    	 	//should assert false
     	    @Test
     	    public void containsLessThanLowerBound() {
     	    	assertFalse("-3 should be in range -1 and 1",exampleRange.contains(-3.0));
     	    }
     	    
     	    // This one test if the values greater than the upper bound is  not contained in -1 and 1
+    	  //should assert false
     	    @Test
     	    public void containsMoreThanUpperBound() {
     	    	assertFalse("3 should be in range -1 and 1",exampleRange.contains(3.0));
@@ -86,13 +91,15 @@ public class RangeTest {
     
     public static class boundaryTesting{
     	
-    	
+    	//checks if lower bound is -1
     	@Test
         public void lowerBoundShouldBeNegativeOne() {
         	assertEquals("The lower bound of -1 and 1 should be -1",
         	        -1.0, exampleRange.getLowerBound(), .000000001d);
         }
         
+    	
+    	//checks if upper bound is 1
         @Test
         public void upperBoundShouldBeOne() {
         	assertEquals("The upper bound of -1 and 1 should be 1",
@@ -105,14 +112,16 @@ public class RangeTest {
     public static class intersectingTest {
     	
     	
-    	
-    	
+    	//testing with boundaries  within -1 and 1
+   	 	//should  be valid
     	 @Test
     	    public void intersectWithValuesWithinBoundary() {
     	    	assertTrue("-0.5 and 0 should intersect -1 and 1",
     	    	        exampleRange.intersects(-0.5, 0));
     	    }
     	 
+    	//testing with range boundaries 
+    	 //should not be valid
     	 @Test
     	 public void intersectWithRangeBoundaries() {
     		 assertTrue("-1 and 1 should intersect -1 and 1",
@@ -120,25 +129,32 @@ public class RangeTest {
  	    
     	 }
     	 
+    	 //testing with only lower value in range
+    	 //should assert false
     	 @Test
     	 public void intersectWithOnlyLowerValueInRange() {
  	    	assertFalse("0 and 5 should not intersect -1 and 1",
  	    	        exampleRange.intersects(0, 5));
  	    }
     	 
+    	 //testing with only upper value in range
+    	 //should assert false
     	 @Test
     	 public void intersectWithOnlyUpperValueInRange() {
  	    	assertFalse("-5 and 0 should not intersect -1 and 1",
  	    	        exampleRange.intersects(-5, 0));
     	 }
  	    
-    	 
+    	 //testing with both boundaries greater than 1
+    	 //should assert false
     	 @Test
     	 public void intersectWithBothValuesMoreThanUpperBoundary() {
  	    	assertFalse("3 and 10 should not intersect -1 and 1",
  	    	        exampleRange.intersects(3, 10));
  	    }
     	 
+    	 //testing with both boundaries less than -1
+    	 //should assert false
     	 @Test
     	 public void intersectWithBothValuesLessThanLowerBoundary() {
  	    	assertFalse("-5 and -3 should not intersect -1 and 1",
@@ -146,6 +162,8 @@ public class RangeTest {
  	    	
  	    }
     	 
+    	 //testing with boundaries Less Than -1 And greater Than 1
+    	 //should not be valid
     	 @Test
     	 public void intersectWithBothValuesLessThanLowerBoundaryAndGreaterThanUpperBoundary() {
  	    	assertFalse("-2 and 2 should not intersect -1 and 1",

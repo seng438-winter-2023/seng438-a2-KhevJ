@@ -175,10 +175,10 @@ public class calculateRowTotalTest {
 	}
 	
 	
-	//valid input with 2 columns |7.5| 
+	//valid input with 2 rows    |7.5| 
 	//							 |7.5|
 	@Test
-	public void calculateColumnTotalForTwoRows() {
+	public void calculateRowTotalForTwoRows() {
 		mockingContext.checking(new Expectations() {
 	        {
 	            one(values).getColumnCount();
