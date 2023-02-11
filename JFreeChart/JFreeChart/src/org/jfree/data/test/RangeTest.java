@@ -10,6 +10,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Enclosed.class)
 public class RangeTest {
+	
     private static Range exampleRange;
     @BeforeClass public static void setUpBeforeClass() throws Exception {
     	exampleRange = new Range(-1, 1);
@@ -24,6 +25,8 @@ public class RangeTest {
    
 
    public static class lengthTesting {
+	   
+	   //This tests if the length would be 2
 	   @Test
 	    public void lengthShouldBeTwo() {
 	    	assertEquals("The length of -1 and 1 should be 2",
@@ -34,7 +37,7 @@ public class RangeTest {
 
     
     
-    
+ //This tests if the central value would zero
     public static class centralValueTesting{
     	 @Test
     	    public void centralValueShouldBeZero() {
@@ -45,29 +48,33 @@ public class RangeTest {
     	 
     }
    
-    
+   //This one tests the contains() method
     public static class containsTesting {
+    	
+    		// This one tests if zero is contained in -1 and 1
     	 	@Test
     	    public void containsInRange() {
     	    	assertTrue("Zero should be in range -1 and 1",exampleRange.contains(0.0));
     	    }
     	    
-    	 	
+    	 // This one tests if the lower bound is contained in -1 and 1
     	 	@Test
     	 	public void containsLowerBound() {
     	    	assertTrue("-1 should be in range -1 and 1",exampleRange.contains(-1.0));
     	    }
     	 	
-    	 	
+    	 // This one tests if the upper bound is contained in -1 and 1
     	 	public void containsUpperBound() {
     	    	assertTrue("1 should be in range -1 and 1",exampleRange.contains(1.0));
     	    }
     	    
+    	   // This one test if the values lower than the lower bound is  not contained in -1 and 1
     	    @Test
     	    public void containsLessThanLowerBound() {
     	    	assertFalse("-3 should be in range -1 and 1",exampleRange.contains(-3.0));
     	    }
     	    
+    	    // This one test if the values greater than the upper bound is  not contained in -1 and 1
     	    @Test
     	    public void containsMoreThanUpperBound() {
     	    	assertFalse("3 should be in range -1 and 1",exampleRange.contains(3.0));
@@ -78,6 +85,8 @@ public class RangeTest {
 
     
     public static class boundaryTesting{
+    	
+    	
     	@Test
         public void lowerBoundShouldBeNegativeOne() {
         	assertEquals("The lower bound of -1 and 1 should be -1",

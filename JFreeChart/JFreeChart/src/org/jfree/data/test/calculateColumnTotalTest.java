@@ -45,8 +45,8 @@ public class calculateColumnTotalTest {
 	
 	
 	
-	/*** Here starts calculateColumnTotal for 2 values***/
-	//valid inputs |7.5| 
+	/*** Here starts calculateColumnTotal for 2 valid values ***/
+	//			   |7.5| 
 	//			   |2.5|
 	@Test
 	public void calculateColumnTotalForTwoValues() {
@@ -67,8 +67,8 @@ public class calculateColumnTotalTest {
 	}
 	
 	
-	/*** Here starts calculateColumnTotal for 2 negative values ***/
-	//valid inputs |-7.5|
+	/*** Here starts calculateColumnTotal for 2 negative valid values ***/
+	//			   |-7.5|
 	//             |-2.5|
 	@Test
 	public void calculateColumnTotalForNegativeTwoValues() {
@@ -88,8 +88,8 @@ public class calculateColumnTotalTest {
 		
 	}
 	
-	/*** Here starts calculateColumnTotal for 5 values ***/
-	//valid inputs |7.5 |
+	/*** Here starts calculateColumnTotal for 5 valid values ***/
+	//			   |7.5 |
 //				   |-2.5| 
 //				   |2.5 |
 //				   |7.5 |
@@ -119,8 +119,8 @@ public class calculateColumnTotalTest {
 		
 	}
 	
-	/*** Here starts calculateColumnTotal for 1 values ***/
-	//valid inputs |7.5 |
+	/*** Here starts calculateColumnTotal for 1 valid value ***/
+	//	 |7.5 |
 	@Test
 	public void calculateColumnTotalOneValue() {
 		mockingContext.checking(new Expectations() {
@@ -195,6 +195,26 @@ public class calculateColumnTotalTest {
 		    
 			
 		}
+		
+		
+		
+		//invalid  column index higher than column length for table |1|
+		//should trigger InvalidParameterException
+		@Test(expected = InvalidParameterException.class)
+		public void testingForInvalidParameterExceptionForInvalidRowIndexHigherThanRowSize() {
+			mockingContext.checking(new Expectations() {
+		        {
+		            one(values).getRowCount();
+		            will(returnValue(1));
+		            one(values).getValue(0, 2);
+		            will(returnValue(1));
+		            
+		        }
+		    });
+		    DataUtilities.calculateColumnTotal(values, 2);
+		    
+			
+		}
 	
 	
 	//invalid inputs |null| 
@@ -245,7 +265,7 @@ public class calculateColumnTotalTest {
 	
 	
 
-	//invalid inputs |null|
+	//null is passed in arguments
 	//should trigger InvalidParameterException
 	@Test(expected = InvalidParameterException.class)
 	public void testingForInvalidParameterExceptionForInvalidValues2D() {

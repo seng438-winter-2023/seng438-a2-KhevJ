@@ -230,7 +230,7 @@ public class calculateRowTotalTest {
 	        {
 	            one(values).getColumnCount();
 	            will(returnValue(1));
-	            one(values).getValue(0, 0);
+	            one(values).getValue(-1, 0);
 	            will(returnValue(1));
 	            
 	        }
@@ -248,7 +248,7 @@ public class calculateRowTotalTest {
 	        {
 	            one(values).getColumnCount();
 	            will(returnValue(1));
-	            one(values).getValue(0, 0);
+	            one(values).getValue(2, 0);
 	            will(returnValue(1));
 	            
 	        }

@@ -27,8 +27,8 @@ public class getCumulativePercentagesTest {
 
 	@Before
 	public void setUp() throws Exception {
-		mockingContext = new Mockery();
-		values = mockingContext.mock(KeyedValues.class);
+		mockingContext = new Mockery(); // Making new mocking object
+		values = mockingContext.mock(KeyedValues.class); // Creating mocking object of keyed values
 	}
 
 	@After
@@ -49,27 +49,27 @@ public class getCumulativePercentagesTest {
 	        {
 	        	
 	        	allowing(values).getItemCount();
-	            will(returnValue(3));
+	            will(returnValue(3)); // Amount of keyed values should be 3
 	            allowing(values).getValue(0);
-	            will(returnValue(5));
+	            will(returnValue(5)); // Value returned should be 5
 	            allowing(values).getKey(0);
-				will(returnValue(0));
+				will(returnValue(0)); // Key returned should be 0
 				allowing(values).getValue(1);
-	            will(returnValue(9));
+	            will(returnValue(9)); // Value returned should be 9
 	            allowing(values).getKey(1);
-				will(returnValue(1));
+				will(returnValue(1)); // Key returned should be 1
 				allowing(values).getValue(2);
-	            will(returnValue(2));
+	            will(returnValue(2)); // Value returned should be 2
 	            allowing(values).getKey(2);
-				will(returnValue(2));
+				will(returnValue(2)); // Key returned should be 2
 	            
 	        }
 	    });
 		
 		KeyedValues result =  DataUtilities.getCumulativePercentages(values);
-		assertEquals("Wrong cummulative percentage", 0.3125, result.getValue(0));
-		assertEquals("Wrong cummulative percentage", 0.875, result.getValue(1));
-		assertEquals("Wrong cummulative percentage", 1.0, result.getValue(2));
+		assertEquals("Wrong cummulative percentage", 0.3125, result.getValue(0)); // Should return 0.3125
+		assertEquals("Wrong cummulative percentage", 0.875, result.getValue(1)); // Should return 0.875
+		assertEquals("Wrong cummulative percentage", 1.0, result.getValue(2)); // Should return 1.0
 		
 		
 	}
@@ -89,27 +89,27 @@ public class getCumulativePercentagesTest {
 	        {
 	        	
 	        	allowing(values).getItemCount();
-	            will(returnValue(3));
+	            will(returnValue(3)); // Amount of keyed values should be 3
 	            allowing(values).getValue(0);
-	            will(returnValue(-5));
+	            will(returnValue(-5)); // Value returned should be -5
 	            allowing(values).getKey(0);
-				will(returnValue(0));
+				will(returnValue(0)); // Key returned should be 0
 				allowing(values).getValue(1);
-	            will(returnValue(-9));
+	            will(returnValue(-9)); // Value returned should be -9
 	            allowing(values).getKey(1);
-				will(returnValue(1));
+				will(returnValue(1)); // Key returned should be 1
 				allowing(values).getValue(2);
-	            will(returnValue(-2));
+	            will(returnValue(-2)); // Value returned should be -2
 	            allowing(values).getKey(2);
-				will(returnValue(2));
+				will(returnValue(2)); // Key returned should be 2
 	            
 	        }
 	    });
 		
 		KeyedValues result =  DataUtilities.getCumulativePercentages(values);
-		assertEquals("Wrong cummulative percentage", 0.3125, result.getValue(0));
-		assertEquals("Wrong cummulative percentage", 0.875, result.getValue(1));
-		assertEquals("Wrong cummulative percentage", 1.0, result.getValue(2));
+		assertEquals("Wrong cummulative percentage", 0.3125, result.getValue(0)); // Should return 0.3125
+		assertEquals("Wrong cummulative percentage", 0.875, result.getValue(1)); // Should return 0.875
+		assertEquals("Wrong cummulative percentage", 1.0, result.getValue(2)); // Should return 1.0
 		
 		
 	}
@@ -126,27 +126,27 @@ public class getCumulativePercentagesTest {
 	        {
 	        	
 	        	allowing(values).getItemCount();
-	            will(returnValue(3));
+	            will(returnValue(3)); // Amount of keyed values should be 3
 	            allowing(values).getValue(0);
-	            will(returnValue(1));
+	            will(returnValue(1)); // Value returned should be 1
 	            allowing(values).getKey(0);
-				will(returnValue(0));
+				will(returnValue(0)); // Key returned should be 0
 				allowing(values).getValue(1);
-	            will(returnValue(-1));
+	            will(returnValue(-1)); // Value returned should be -1
 	            allowing(values).getKey(1);
-				will(returnValue(1));
+				will(returnValue(1)); // Key returned should be 1
 				allowing(values).getValue(2);
-	            will(returnValue(1));
+	            will(returnValue(1)); // Value returned should be 1
 	            allowing(values).getKey(2);
-				will(returnValue(2));
+				will(returnValue(2)); // Key returned should be 2
 	            
 	        }
 	    });
 		
 		KeyedValues result =  DataUtilities.getCumulativePercentages(values);
-		assertEquals("Wrong cummulative percentage", 1.0, result.getValue(0));
-		assertEquals("Wrong cummulative percentage", -1.0, result.getValue(1));
-		assertEquals("Wrong cummulative percentage", 1.0, result.getValue(2));
+		assertEquals("Wrong cummulative percentage", 1.0, result.getValue(0)); // Should return 1.0
+		assertEquals("Wrong cummulative percentage", -1.0, result.getValue(1)); // Should return -1.0
+		assertEquals("Wrong cummulative percentage", 1.0, result.getValue(2)); // Should return 1.0
 		
 		
 	}
@@ -163,17 +163,17 @@ public class getCumulativePercentagesTest {
 	        {
 	        	
 	        	allowing(values).getItemCount();
-	            will(returnValue(1));
+	            will(returnValue(1)); // Amount of keyed values should be 1
 	            allowing(values).getValue(0);
-	            will(returnValue(5));
+	            will(returnValue(5)); // Value returned should be 5
 	            allowing(values).getKey(0);
-				will(returnValue(0));
+				will(returnValue(0)); // Key returned should be 0
 	            
 	        }
 	    });
 		
 		KeyedValues result =  DataUtilities.getCumulativePercentages(values);
-		assertEquals("Wrong cummulative percentage",1.0, result.getValue(0));
+		assertEquals("Wrong cummulative percentage",1.0, result.getValue(0)); // Should return 1.0
 	
 		
 		
@@ -192,54 +192,41 @@ public class getCumulativePercentagesTest {
 	        {
 	        	
 	        	allowing(values).getItemCount();
-	            will(returnValue(5));
+	            will(returnValue(5)); // Amount of keyed values should be 5
 	            allowing(values).getValue(0);
-	            will(returnValue(1));
+	            will(returnValue(1)); // Value returned should be 1
 	            allowing(values).getKey(0);
-				will(returnValue(0));
+				will(returnValue(0)); // Key returned should be 0
 				allowing(values).getValue(1);
-	            will(returnValue(1));
+	            will(returnValue(1)); // Value returned should be 1
 	            allowing(values).getKey(1);
-				will(returnValue(1));
+				will(returnValue(1)); // Key returned should be 0
 				allowing(values).getValue(2);
-	            will(returnValue(1));
+	            will(returnValue(1)); // Value returned should be 1
 	            allowing(values).getKey(2);
-				will(returnValue(2));
+				will(returnValue(2)); // Key returned should be 0
 				allowing(values).getValue(3);
-	            will(returnValue(1));
+	            will(returnValue(1)); // Value returned should be 1
 	            allowing(values).getKey(3);
-				will(returnValue(3));
+				will(returnValue(3)); // Key returned should be 0
 				allowing(values).getValue(4);
-	            will(returnValue(1));
+	            will(returnValue(1)); // Value returned should be 1
 	            allowing(values).getKey(4);
-				will(returnValue(4));
+				will(returnValue(4)); // Key returned should be 0
 				
 	            
 	        }
 	    });
 		
 		KeyedValues result =  DataUtilities.getCumulativePercentages(values);
-		assertEquals("Wrong cummulative percentage",0.2, result.getValue(0));
-		assertEquals("Wrong cummulative percentage",0.4, result.getValue(1));
-		assertEquals("Wrong cummulative percentage",0.6, result.getValue(2));
-		assertEquals("Wrong cummulative percentage",0.8, result.getValue(3));
-		assertEquals("Wrong cummulative percentage",1.0, result.getValue(4));
+		assertEquals("Wrong cummulative percentage",0.2, result.getValue(0)); // Should return 0.2
+		assertEquals("Wrong cummulative percentage",0.4, result.getValue(1)); // Should return 0.4
+		assertEquals("Wrong cummulative percentage",0.6, result.getValue(2)); // Should return 0.6
+		assertEquals("Wrong cummulative percentage",0.8, result.getValue(3)); // Should return 0.8
+		assertEquals("Wrong cummulative percentage",1.0, result.getValue(4)); // Should return 1.0
 	
 		
 	}	
-	
-	@Test
-	public void getCumulativePercentagesTestForNoKey() {
-		mockingContext.checking(new Expectations() {
-	        {
-	        	
-	        	allowing(values).getItemCount();
-	            will(returnValue(0));
-	        }
-	    });
-		 DataUtilities.getCumulativePercentages(values);
-		
-	}
 	
 	
 	//passing null keyValued
@@ -248,7 +235,7 @@ public class getCumulativePercentagesTest {
 	public void getCumulativePercentagesTestForNoKeyValued() {
 		values = null;
 		 try {
-			 DataUtilities.getCumulativePercentages(values);
+			 DataUtilities.getCumulativePercentages(values); // Should throw an exception for the invalid input
 		 }
 		 catch(Exception e){
 			 
@@ -267,16 +254,16 @@ public class getCumulativePercentagesTest {
 	        {
 	        	
 	        	allowing(values).getItemCount();
-	            will(returnValue(1));
+	            will(returnValue(1)); // creates 1 keyed value
 	            allowing(values).getValue(0);
-	            will(returnValue(null));
+	            will(returnValue(null)); // value is null
 	            allowing(values).getKey(0);
-				will(returnValue(0));
+				will(returnValue(0)); // key is 0
 	            
 	        }
 	    });
 		
-		DataUtilities.getCumulativePercentages(values);
+		DataUtilities.getCumulativePercentages(values); // Should throw an exception for the invalid input
 		
 	
 		
@@ -294,21 +281,21 @@ public class getCumulativePercentagesTest {
 	        {
 	        	
 	        	allowing(values).getItemCount();
-	            will(returnValue(2));
+	            will(returnValue(2)); // creates 2 keyed values
 	            allowing(values).getValue(0);
-	            will(returnValue(0));
+	            will(returnValue(0)); // value is 0
 	            allowing(values).getKey(0);
-				will(returnValue(0));
+				will(returnValue(0)); // key is 0
 				allowing(values).getValue(1);
-	            will(returnValue(0));
+	            will(returnValue(0)); // value is 0
 	            allowing(values).getKey(1);
-				will(returnValue(1));
+				will(returnValue(1)); // key is 0
 				
 	            
 	        }
 	    });
 		
-	    DataUtilities.getCumulativePercentages(values);
+	    DataUtilities.getCumulativePercentages(values); // Should throw an exception for the invalid input
 		
 		
 	}

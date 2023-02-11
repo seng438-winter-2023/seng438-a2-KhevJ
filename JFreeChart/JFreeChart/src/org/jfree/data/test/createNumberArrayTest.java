@@ -38,38 +38,38 @@ public class createNumberArrayTest {
 	// Test creating an empty array 
 	@Test 
 	public void testCreatingEmptyArray() {
-		double[] input = {};
-		Double[] expected = {};
-		Number[] actual = DataUtilities.createNumberArray(input);
-		assertArrayEquals("This should create and array that has nothing in it", expected, actual);
+		double[] input = {}; // Creating empty array to test
+		Double[] expected = {}; // Creating empty expected array
+		Number[] actual = DataUtilities.createNumberArray(input); // Creating array with createnumberarray
+		assertArrayEquals("This should create and array that has nothing in it", expected, actual); // Assert the array is null
 	}
 	
 	// Test creating a small array with valid input
 	@Test
 	public void testCreatingSmallArray() {
-		double[] input = {3.7, 1.9, 10.0, 6.745, 562.159};
-		Double[] expected = {3.7, 1.9, 10.0, 6.745, 562.159};
-		Number[] actual = DataUtilities.createNumberArray(input);
-		assertArrayEquals("This should create an array that is identical to the input for a small array", expected, actual);
+		double[] input = {3.7, 1.9, 10.0, 6.745, 562.159}; // Creating a small array with valid input
+		Double[] expected = {3.7, 1.9, 10.0, 6.745, 562.159}; // Creating a small expected array with valid input
+		Number[] actual = DataUtilities.createNumberArray(input); // Creating array with createnumberarray
+		assertArrayEquals("This should create an array that is identical to the input for a small array", expected, actual); // Assert the array is the same
 	}
 	
 	// Test creating a large array with valid input
 	@Test
 	public void testCreatingLargeArray() {
-		double[] input = {3.7, 1.9, 10.0, 6.745, 562.159, -1235.143, -1.0, 979.0, 32.0, 5634.34, -3244.5, -234.532, 325.6, -35.512, 124.124, 145.532, 79345.754, 432.654, 43565.4562};
-		Double[] expected = {3.7, 1.9, 10.0, 6.745, 562.159, -1235.143, -1.0, 979.0, 32.0, 5634.34, -3244.5, -234.532, 325.6, -35.512, 124.124, 145.532, 79345.754, 432.654, 43565.4562};
-		Number[] actual = DataUtilities.createNumberArray(input);
-		assertArrayEquals("This should create an array that is identical to the input for a large array", expected, actual);
+		double[] input = {3.7, 1.9, 10.0, 6.745, 562.159, -1235.143, -1.0, 979.0, 32.0, 5634.34, -3244.5, -234.532, 325.6, -35.512, 124.124, 145.532, 79345.754, 432.654, 43565.4562}; // Creating large test array with valid input
+		Double[] expected = {3.7, 1.9, 10.0, 6.745, 562.159, -1235.143, -1.0, 979.0, 32.0, 5634.34, -3244.5, -234.532, 325.6, -35.512, 124.124, 145.532, 79345.754, 432.654, 43565.4562}; // Creating large expected array with valid input
+		Number[] actual = DataUtilities.createNumberArray(input); // Creating array with test array using createnumberarray method
+		assertArrayEquals("This should create an array that is identical to the input for a large array", expected, actual); // Assert the arrays are identical
 	}
 	
 	// Test creating an array with invalid input (null)
 	@Test(expected = InvalidParameterException.class)
 	public void testThrowsInvalidParameterException() {
 		try {
-			double[] input = null;
-			DataUtilities.createNumberArray(input);
+			double[] input = null; // Creating a null array
+			DataUtilities.createNumberArray(input); // Creating array with createnumberarray method with null test array, exception should be thrown
 		}
-		catch (Exception e){
+		catch (Exception e){ 
 		}
 	}
 	
